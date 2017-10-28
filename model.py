@@ -19,6 +19,7 @@ class Task():
     def change_description(self, new_description):
         self.description = new_description
 
+
 class TaskList():
     
     def __init__(self):
@@ -31,5 +32,4 @@ class TaskList():
         if isinstance(task_index, int):
             del self.todo_list[task_index]
 
-    
 

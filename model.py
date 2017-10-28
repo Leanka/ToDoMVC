@@ -16,8 +16,8 @@ class Task():
     def change_name(self, new_name):
         self.name = new_name
 
-    def change_description(self):
-        pass
+    def change_description(self, new_description):
+        self.description = new_description
 
 class TaskList():
     pass

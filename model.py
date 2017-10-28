@@ -1,8 +1,11 @@
 
 class Task():
     
-    def __init__(self):
-        pass
+    def __init__(self, name, description):
+        if isinstance(name, str) and isinstance(description, str):
+            self.name = name
+            self.description = description
+            self.is_done = False
 
     def mark_as_done(self):
         pass
@@ -15,7 +18,7 @@ class Task():
 
     def change_description(self):
         pass
-        
+
 class TaskList():
     pass
 

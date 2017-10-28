@@ -14,7 +14,7 @@ def take_task_index(task_list_length=0):
             if task_index not in range(task_list_length):
                 raise IndexError
         except (IndexError, ValueError):
-            pass
+            pass  # add clearing one line above for smooth passing input
         else:
             return task_index
 
@@ -25,7 +25,6 @@ def prepare_task_list_to_be_viewed():
     pass
 
 def main():
-    pass
 
 if __name__ == '__main__':
     main()

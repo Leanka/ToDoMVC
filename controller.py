@@ -26,6 +26,26 @@ def prepare_task_list_to_be_viewed():
     pass
 
 def main():
+    to_do = TaskList()
+    while True:
+        # show menu
+        chosen_menu_option = take_user_input("Choose an option by it's number")
+        if chosen_menu_option == "1":  # Display items list 
+            pass
+        elif chosen_menu_option == "2":  # Display specific item's details
+            pass
+        elif chosen_menu_option == "3":  # Add item
+            pass
+        elif chosen_menu_option == "4":  # Change items name
+            pass
+        elif chosen_menu_option == "5":  # Change items desctiption
+            pass
+        elif chosen_menu_option == "6":  # Mark item as done
+            pass
+        elif chosen_menu_option == "7":  # Delete item
+            pass
+        elif chosen_menu_option == "8":  # Exit
+            pass
 
 if __name__ == '__main__':
     main()

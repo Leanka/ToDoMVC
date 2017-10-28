@@ -13,6 +13,7 @@ def take_task_index(task_list_length=0):
     while True:
         try:
             task_index = int(take_user_input('Pass tasks number: ', len(str(task_index))))
+            task_index -= 1  # decrement by one, as list indexes are incremented by one prior being printed to user
             if task_index not in range(task_list_length):
                 raise IndexError("Task position out of scope.\n")
         except IndexError as error_message:

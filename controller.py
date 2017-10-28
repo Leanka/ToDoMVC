@@ -9,7 +9,7 @@ def take_user_input(input_message=' ', max_input_length=1):
 def take_task_index(task_list_length=0):
     while True:
         try:
-            task_index = int(take_user_input('Pass tasks number: ', len(str(task_index))))
+            task_index = int(take_user_input('Pass tasks number: ', len(str(task_list_length))))
             task_index -= 1  # Decrement user input by one, prior checking its validation as list index
             if task_index not in range(task_list_length):
                 raise IndexError("Task position out of scope.\n")
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     main()
 
 #####################################
-example_input_test = take_user_input('Gimmi 3 chars', 3)
+example_input_test = take_task_index(3)
 print('Thats your char =>', example_input_test)
 print(type(example_input_test))
 print(len(example_input_test))

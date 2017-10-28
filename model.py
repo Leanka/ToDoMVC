@@ -13,8 +13,8 @@ class Task():
     def mark_as_undone(self):
         self.is_done = False
 
-    def change_name(self):
-        pass
+    def change_name(self, new_name):
+        self.name = new_name
 
     def change_description(self):
         pass

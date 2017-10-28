@@ -30,7 +30,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-#####################################
-example_input_test = take_task_index(3)
-print('Thats your char =>', example_input_test)
-print(type(example_input_test))
+

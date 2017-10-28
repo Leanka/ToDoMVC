@@ -26,11 +26,14 @@ def prepare_task_list_to_be_viewed():
     pass
 
 def main():
-    to_do = TaskList()
+    tasks_to_do = TaskList()
     while True:
-        # show menu
+        # show menu from view module
         chosen_menu_option = take_user_input("Choose an option by it's number")
-        if chosen_menu_option == "1":  # Display items list 
+        
+        if len(tasks_to_do.todo_list) == 0:
+            # show empty list communicate
+        elif chosen_menu_option == "1":  # Display items list
             pass
         elif chosen_menu_option == "2":  # Display specific item's details
             pass

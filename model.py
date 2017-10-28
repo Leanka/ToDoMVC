@@ -5,7 +5,7 @@ class Task():
 class TaskList():
     
     def __init__():
-        pass
+        self.todo_list = []
 
     def add_task():
         pass

@@ -2,12 +2,9 @@
 def take_user_input(input_message=' ', max_input_length=1):
     while True:
         users_input = input("{}: ".format(input_message))
-        if len(users_input.strip()) == 0:
-            # show message from view
-        elif len(users_input) > max_input_length:
-            # show message from view
-        else:
-            return users_input            
+        users_input = users_input.strip()
+        if (len(users_input) != 0) and (len(users_input) <= max_input_length):
+            return users_input
 
 def take_task_index(task_list_length=0):
     while True:
@@ -35,3 +32,8 @@ def main():
 if __name__ == '__main__':
     main()
 
+#####################################
+example_input_test = take_user_input('Gimmi 3 chars', 3)
+print('Thats your char =>', example_input_test)
+print(type(example_input_test))
+print(len(example_input_test))

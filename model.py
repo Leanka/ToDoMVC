@@ -11,7 +11,7 @@ class Task():
         self.is_done = True
 
     def mark_as_undone(self):
-        pass
+        self.is_done = False
 
     def change_name(self):
         pass

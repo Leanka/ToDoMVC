@@ -12,11 +12,9 @@ def take_task_index(task_list_length=0):
             task_index = int(take_user_input('Pass tasks number', len(str(task_list_length))))
             task_index -= 1  # Decrement user input by one, prior checking its validation as list index
             if task_index not in range(task_list_length):
-                raise IndexError("Task position out of scope.\n")
-        except IndexError as error_message:
-            print(error_message)  # show message from view?
-        except ValueError as error_message:
-            print(error_message)  # show message from view?
+                raise IndexError
+        except (IndexError, ValueError):
+            pass
         else:
             return task_index
 
@@ -36,4 +34,3 @@ if __name__ == '__main__':
 example_input_test = take_task_index(3)
 print('Thats your char =>', example_input_test)
 print(type(example_input_test))
-print(len(example_input_test))

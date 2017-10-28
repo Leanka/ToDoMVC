@@ -4,11 +4,11 @@ class Task():
 
 class TaskList():
     
-    def __init__():
+    def __init__(self):
         self.todo_list = []
 
-    def add_task():
-        pass
+    def add_task(self, name, description):
+        self.todo_list.append(Task(name, description))
 
     def remove_task():
         pass

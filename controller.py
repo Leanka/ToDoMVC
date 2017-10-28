@@ -1,3 +1,4 @@
+from model import*
 
 def take_user_input(input_message=' ', max_input_length=1):
     while True:

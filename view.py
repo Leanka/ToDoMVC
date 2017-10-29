@@ -41,7 +41,8 @@ def display_operation_communicate(noun='something', past_participle_varb='done',
     time.sleep(2)
 
 def display_main_menu():
-    menu = [" 1. Display items list",
+    menu = ["Possible oparations:",
+            " 1. Display items list",
             " 2. Display specific item's details",
             " 3. Add item",
             " 4. Change items name",

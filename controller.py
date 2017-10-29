@@ -78,7 +78,8 @@ def main():
         chosen_menu_option = take_user_input("Choose an option by it's number")
 
         if (len(tasks_to_do.todo_list) == 0) and check_if_choice_is_not_workable(chosen_menu_option):
-            display_operation_communicate('Invalid choice', 'made', 'No tasks to work on. Try to add some.')
+            if chosen_menu_option in ('1', '2', '3', '4', '5', '6', '7', '8'):
+                display_operation_communicate('Invalid choice', 'made', 'No tasks to work on. Try to add some.')
 
         elif chosen_menu_option == "1":  # Display items list
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))

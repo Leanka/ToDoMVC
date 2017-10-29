@@ -1,7 +1,15 @@
 def display_tasks_list(tasks_dict):
-    for (index, name) in enumerate(tasks_dict['name']):
-        print(index, name, tasks_dict['id'][index])
-    # add format + ljust for every single value in 
+    title_bar = "|{:^3}|{:^5}|{:^20}|".format('', 'id', 'name')
+    separator = '-'*len(title_bar)
+
+    print(separator)
+    print(title_bar)
+    print(separator)
+    for index in range(len(tasks_dict['name'])):
+        print("|{:^3}|{:>5}|{:>20}|".format(index+1, tasks_dict['id'][index], tasks_dict['name'][index]))
+        print(separator)
+
+    # ValueError: Invalid format specifier if trying to use vars inside format brackets
 
 def display_single_task_info(objects_dict):
     for attribute in objects_dict:
@@ -25,4 +33,5 @@ def display_main_menu():
 
     for operation in menu:
         print(operation)
+
 

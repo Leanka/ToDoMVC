@@ -5,3 +5,7 @@ def display_tasks_list():
 def display_single_task_info():
     pass
 
+
+def display_operation_communicate(noun='Something', past_participle_varb='done'):
+    print("{} has been {} successfully".format(noun, past_participle_varb))
+

@@ -24,13 +24,21 @@ def take_task_index(task_list_length):
 
 
 def prepare_tasks_to_be_viewed(todo_list):
-    tasks_ids_and_names = {'id': [], 'name': []}
+    tasks_names = []
+    tasks_status = []
+    attributes_values_sorted_in_lists = []
 
     for task in todo_list:
-        tasks_ids_and_names['id'].append(str(task.__dict__['is_done']))
-        tasks_ids_and_names['name'].append(task.__dict__['name'])
+        tasks_names.append(task.__dict__['name'])
+        if task.__dict__['is_done']:
+            tasks_status.append('DONE')
+        else:
+            tasks_status.append('NOT DONE')
+    
+    attributes_values_sorted_in_lists.append(tasks_status)
+    attributes_values_sorted_in_lists.append(tasks_names)
 
-    return tasks_ids_and_names
+    return attributes_values_sorted_in_lists
 
 
 def check_if_choice_is_workable(chosen_option):

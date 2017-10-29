@@ -53,9 +53,14 @@ def main():
             chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
             tasks_new_name = take_user_input('Pass tasks name (max 20 char)', 20)
             tasks_to_do.todo_list[chosen_task_index].change_name(tasks_new_name)
-
+            # print description has been changed message
+            
         elif chosen_menu_option == "5":  # Change items desctiption
-            pass
+            chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
+            tasks_new_description = take_user_input('Pass tasks description (max 150 char)', 150)
+            tasks_to_do.todo_list[chosen_task_index].change_description(tasks_new_description)
+            # print description has been changed message
+
         elif chosen_menu_option == "6":  # Mark item as done
             chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
             tasks_to_do.todo_list[chosen_task_index].mark_as_done()

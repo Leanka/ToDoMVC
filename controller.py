@@ -50,7 +50,10 @@ def main():
             tasks_to_do.add_task(task_name, task_description)
 
         elif chosen_menu_option == "4":  # Change items name
-            pass
+            chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
+            tasks_new_name = take_user_input('Pass tasks name (max 20 char)', 20)
+            tasks_to_do.todo_list[chosen_task_index].change_name(tasks_new_name)
+
         elif chosen_menu_option == "5":  # Change items desctiption
             pass
         elif chosen_menu_option == "6":  # Mark item as done

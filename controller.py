@@ -102,6 +102,7 @@ def main():
             task_name = take_user_input('Pass new tasks name (max 20 char)', 20)
             task_description = take_user_input('Pass new tasks description (max 150 char)', 150)
             tasks_to_do.add_task(task_name, task_description)
+            display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('task', 'added')
 
         elif chosen_menu_option == "4":  # Change items name
@@ -109,6 +110,7 @@ def main():
             chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
             tasks_new_name = take_user_input('Pass tasks new name (max 20 char)', 20)
             tasks_to_do.todo_list[chosen_task_index].change_name(tasks_new_name)
+            display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('name', 'changed')
 
         elif chosen_menu_option == "5":  # Change items desctiption
@@ -116,18 +118,21 @@ def main():
             chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
             tasks_new_description = take_user_input('Pass tasks new description (max 150 char)', 150)
             tasks_to_do.todo_list[chosen_task_index].change_description(tasks_new_description)
+            display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('description', 'changed')
 
         elif chosen_menu_option == "6":  # Mark item as done
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
             tasks_to_do.todo_list[chosen_task_index].mark_as_done()
+            display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('task', 'marked')
 
         elif chosen_menu_option == "7":  # Delete item
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
             tasks_to_do.remove_task(chosen_task_index)
+            display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('task', 'deleted')
 
         elif chosen_menu_option == "8":  # Exit

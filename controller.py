@@ -22,7 +22,7 @@ def take_task_index(task_list_length=0):
 def prepare_task_to_be_viewed():
     pass
 
-def prepare_task_list_to_be_viewed(todo_list):
+def prepare_tasks_to_be_viewed(todo_list):
     tasks_ids_and_names = {'id': [], 'name': []}
 
     for task in todo_list:

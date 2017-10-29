@@ -32,6 +32,7 @@ def main():
         chosen_menu_option = take_user_input("Choose an option by it's number")
         
         if len(tasks_to_do.todo_list) == 0:
+            pass
             # show empty list communicate
         elif chosen_menu_option == "1":  # Display items list
             pass

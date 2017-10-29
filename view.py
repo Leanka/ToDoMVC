@@ -22,8 +22,7 @@ def display_tasks_list(tasks_attributes_lists):
                                             tasks_attributes_lists[id_list_index][index], 
                                             tasks_attributes_lists[name_list_index][index]))
         print(separator)
-
-    # ValueError: Invalid format specifier if trying to use vars inside format brackets
+    print('\n')
 
 
 def display_single_task_info(task_info):
@@ -34,10 +33,10 @@ def display_single_task_info(task_info):
     for info in task_info:
         print(info)
         print(separator)
-
+    print('\n')
 
 def display_operation_communicate(noun='something', past_participle_varb='done', instructions=''):
-    print("\n{} has been {}! {}".format(noun.title(), past_participle_varb.lower(), instructions))
+    print("{} has been {}! {}".format(noun.title(), past_participle_varb.lower(), instructions))
     time.sleep(2)
 
 def display_main_menu():

@@ -1,4 +1,5 @@
 from model import*
+from view import*
 import sys
 
 
@@ -37,6 +38,7 @@ def check_if_choice_is_workable(chosen_option):
 
     return chosen_option in possible_options_if_no_task_exists
 
+
 def main():
     tasks_to_do = TaskList()
     while True:
@@ -53,13 +55,14 @@ def main():
 
         elif chosen_menu_option == "2":  # Display specific item's details
             chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
-            tasks_to_do.todo_list[chosen_task_index].__dict__ 
+            tasks_to_do.todo_list[chosen_task_index].__dict__
             # przekazać odp funkcji w module view
 
         elif chosen_menu_option == "3":  # Add item
             task_name = take_user_input('Pass tasks name (max 20 char)', 20)
             task_description = take_user_input('Pass tasks description (max 150 char)', 150)
             tasks_to_do.add_task(task_name, task_description)
+            display_operation_communicate('task', 'added')
             # print item has beed add/ed?/ to the list! message
 
         elif chosen_menu_option == "4":  # Change items name

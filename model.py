@@ -33,3 +33,11 @@ class TaskList():
             del self.todo_list[task_index]
 
 
+# example_task = Task('idź spać', 'no wstań i idź')
+# sec_task = Task('skończ waść', 'wstydu oszczędź')
+# print(example_task.__dict__)
+todo = TaskList()
+todo.add_task('coś', 'cokolwiek byle było')
+todo.add_task('idź spać', 'no wstań i idź')
+todo.add_task('skończ waść', 'wstydu oszczędź')
+

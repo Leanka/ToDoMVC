@@ -40,8 +40,10 @@ def main():
         if len(tasks_to_do.todo_list) == 0 and check_if_choice_is_workable(choice):
             pass
             # show empty list & bad choice communicate
+
         elif chosen_menu_option == "1":  # Display items list
             pass
+
         elif chosen_menu_option == "2":  # Display specific item's details
             pass
 

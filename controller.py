@@ -1,11 +1,13 @@
 from model import*
 
+
 def take_user_input(input_message=' ', max_input_length=1):
     while True:
         users_input = input("{}: ".format(input_message))
         users_input = users_input.strip()
         if (len(users_input) != 0) and (len(users_input) <= max_input_length):
             return users_input
+
 
 def take_task_index(task_list_length=0):
     while True:
@@ -28,6 +30,7 @@ def prepare_tasks_to_be_viewed(todo_list):
         tasks_ids_and_names['name'].append(task.__dict__['name'])
 
     return tasks_ids_and_names
+
 
 def main():
     tasks_to_do = TaskList()

@@ -1,4 +1,5 @@
 from model import*
+import sys
 
 def take_user_input(input_message=' ', max_input_length=1):
     while True:
@@ -57,7 +58,8 @@ def main():
         elif chosen_menu_option == "7":  # Delete item
             pass
         elif chosen_menu_option == "8":  # Exit
-            pass
+            # print goodbye message
+            sys.exit()
 
 if __name__ == '__main__':
     main()

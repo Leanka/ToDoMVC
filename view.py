@@ -1,9 +1,11 @@
 def display_tasks_list():
     pass
 
-
-def display_single_task_info():
-    pass
+def display_single_task_info(objects_dict):
+    for attribute in objects_dict:
+        print(attribute, "=>", objects_dict.get(attribute))
+    # add format
+    # add pprint
 
 
 def display_operation_communicate(noun='something', past_participle_varb='done', instructions=''):

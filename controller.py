@@ -54,12 +54,15 @@ def main():
         elif chosen_menu_option == "5":  # Change items desctiption
             pass
         elif chosen_menu_option == "6":  # Mark item as done
-            pass
+            chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
+            tasks_to_do.todo_list[chosen_task_index].mark_as_done()
+            # print task.name task has been done! message
+
         elif chosen_menu_option == "7":  # Delete item
             chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
             tasks_to_do.remove_task(chosen_task_index)
             # print deleted item message
-            
+
         elif chosen_menu_option == "8":  # Exit
             # print goodbye message
             sys.exit()

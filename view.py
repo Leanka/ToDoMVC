@@ -1,5 +1,7 @@
-def display_tasks_list():
-    pass
+def display_tasks_list(tasks_dict):
+    for (index, name) in enumerate(tasks_dict['name']):
+        print(index, name, tasks_dict['id'][index])
+    # add format + ljust for every single value in 
 
 def display_single_task_info(objects_dict):
     for attribute in objects_dict:

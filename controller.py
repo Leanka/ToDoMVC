@@ -25,21 +25,29 @@ def prepare_task_to_be_viewed():
 def prepare_task_list_to_be_viewed():
     pass
 
+def check_if_choice_is_workable(chosen_option):
+    possible_options_if_no_task_exists = ["3", "8"]
+
+    return chosen_option in possible_options_if_no_task_exists
+
 def main():
     tasks_to_do = TaskList()
     while True:
         # show menu from view module
         chosen_menu_option = take_user_input("Choose an option by it's number")
-        
-        if len(tasks_to_do.todo_list) == 0:
+
+        if len(tasks_to_do.todo_list) == 0 and check_if_choice_is_workable(choice):
             pass
-            # show empty list communicate
+            # show empty list & bad choice communicate
         elif chosen_menu_option == "1":  # Display items list
             pass
         elif chosen_menu_option == "2":  # Display specific item's details
             pass
         elif chosen_menu_option == "3":  # Add item
-            pass
+            task_name = take_user_input('Pass tasks name (max 20 char)', 20)
+            task_description = take_user_input('Pass tasks description (max 150 char)', 150)
+            tasks_to_do.add_task(task_name, task_description)
+
         elif chosen_menu_option == "4":  # Change items name
             pass
         elif chosen_menu_option == "5":  # Change items desctiption

@@ -77,11 +77,9 @@ def main():
 
         if len(tasks_to_do.todo_list) == 0 and check_if_choice_is_workable(choice):
             display_operation_communicate('Invalid choice', 'made', 'No tasks to work on. Try to add some.')
-            # show empty list & bad choice communicate
 
         elif chosen_menu_option == "1":  # Display items list
-            prepare_tasks_to_be_viewed(tasks_to_do.todo_list)
-            # wrzucić do  funkcji w show
+            display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
 
         elif chosen_menu_option == "2":  # Display specific item's details
             chosen_task_index = take_task_index(len(tasks_to_do.todo_list))

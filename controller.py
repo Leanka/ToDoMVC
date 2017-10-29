@@ -46,7 +46,7 @@ def main():
         chosen_menu_option = take_user_input("Choose an option by it's number")
 
         if len(tasks_to_do.todo_list) == 0 and check_if_choice_is_workable(choice):
-            pass
+            display_operation_communicate('Invalid choice', 'made', 'No tasks to work on. Try to add some.')
             # show empty list & bad choice communicate
 
         elif chosen_menu_option == "1":  # Display items list
@@ -87,7 +87,7 @@ def main():
             display_operation_communicate('task', 'deleted')
 
         elif chosen_menu_option == "8":  # Exit
-            # print goodbye message
+            display_operation_communicate('program', 'closed')
             sys.exit()
 
 if __name__ == '__main__':

@@ -1,6 +1,7 @@
 from model import*
 import sys
 
+
 def take_user_input(input_message=' ', max_input_length=1):
     while True:
         users_input = input("{}: ".format(input_message))
@@ -20,11 +21,16 @@ def take_task_index(task_list_length):
         else:
             return task_index
 
-def prepare_task_to_be_viewed():
-    pass
 
-def prepare_task_list_to_be_viewed():
-    pass
+def prepare_tasks_to_be_viewed(todo_list):
+    tasks_ids_and_names = {'id': [], 'name': []}
+
+    for task in todo_list:
+        tasks_ids_and_names['id'].append(str(task.__dict__['is_done']))
+        tasks_ids_and_names['name'].append(task.__dict__['name'])
+
+    return tasks_ids_and_names
+
 
 def check_if_choice_is_workable(chosen_option):
     possible_options_if_no_task_exists = ["3", "8"]

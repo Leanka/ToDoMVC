@@ -39,8 +39,6 @@ def display_single_task_info(task_info):
 def display_operation_communicate(noun='something', past_participle_varb='done', instructions=''):
     print("{} has been {}! {}".format(noun.title(), past_participle_varb.lower(), instructions))
     time.sleep(2)
-    sys.stdout.write("\033[F")
-    sys.stdout.write("\033[K")
 
 def display_main_menu():
     menu = [" 1. Display items list",

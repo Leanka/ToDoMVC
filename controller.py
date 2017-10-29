@@ -10,6 +10,7 @@ def take_user_input(input_message=' ', max_input_length=1):
         if (len(users_input) != 0) and (len(users_input) <= max_input_length):
             return users_input
 
+
 def take_task_index(task_list_length):
     while True:
         try:
@@ -21,6 +22,7 @@ def take_task_index(task_list_length):
             pass  # add clearing one line above for smooth passing input
         else:
             return task_index
+
 
 def prepare_single_task_to_be_viewed(task):
     objects_dict = task.__dict__
@@ -56,7 +58,7 @@ def prepare_tasks_to_be_viewed(todo_list):
             tasks_status.append('DONE')
         else:
             tasks_status.append('NOT DONE')
-    
+
     attributes_values_sorted_in_lists.append(tasks_status)
     attributes_values_sorted_in_lists.append(tasks_names)
 
@@ -67,7 +69,6 @@ def check_if_choice_is_not_workable(chosen_option):
     possible_options_if_no_task_exists = ["3", "8"]
 
     return chosen_option not in possible_options_if_no_task_exists
-
 
 
 def main():
@@ -121,5 +122,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 

@@ -7,5 +7,5 @@ def display_single_task_info():
 
 
 def display_operation_communicate(noun='Something', past_participle_varb='done'):
-    print("{} has been {} successfully".format(noun, past_participle_varb))
+    print("{} has been {} successfully".format(noun.title(), past_participle_varb.lower()))
 

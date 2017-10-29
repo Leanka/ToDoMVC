@@ -52,7 +52,9 @@ def main():
             # wrzucić do  funkcji w show
 
         elif chosen_menu_option == "2":  # Display specific item's details
-            pass
+            chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
+            tasks_to_do.todo_list[chosen_task_index].__dict__ 
+            # przekazać odp funkcji w module view
 
         elif chosen_menu_option == "3":  # Add item
             task_name = take_user_input('Pass tasks name (max 20 char)', 20)

@@ -42,7 +42,7 @@ def check_if_choice_is_workable(chosen_option):
 def main():
     tasks_to_do = TaskList()
     while True:
-        # show menu from view module
+        display_main_menu()
         chosen_menu_option = take_user_input("Choose an option by it's number")
 
         if len(tasks_to_do.todo_list) == 0 and check_if_choice_is_workable(choice):

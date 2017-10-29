@@ -48,7 +48,8 @@ def main():
             # show empty list & bad choice communicate
 
         elif chosen_menu_option == "1":  # Display items list
-            pass
+            prepare_tasks_to_be_viewed(tasks_to_do.todo_list)
+            # wrzucić do  funkcji w show
 
         elif chosen_menu_option == "2":  # Display specific item's details
             pass

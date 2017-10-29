@@ -1,6 +1,7 @@
 from model import*
 from view import*
 import sys
+import os
 
 
 def take_user_input(input_message=' ', max_input_length=1):
@@ -72,10 +73,12 @@ def check_if_choice_is_not_workable(chosen_option):
 
 
 def main():
+    os.system('clear')
     tasks_to_do = TaskList()
     while True:
         display_main_menu()
         chosen_menu_option = take_user_input("Choose an option by it's number")
+        os.system('clear')
 
         if (len(tasks_to_do.todo_list) == 0) and check_if_choice_is_not_workable(chosen_menu_option):
             if chosen_menu_option in ('1', '2', '3', '4', '5', '6', '7', '8'):

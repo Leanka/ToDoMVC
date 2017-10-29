@@ -22,6 +22,28 @@ def take_task_index(task_list_length):
         else:
             return task_index
 
+def prepare_single_task_to_be_viewed(task):
+    objects_dict = task.__dict__
+    max_line_len = 50
+    task_info = []
+
+    for attribute in objects_dict:
+        if len(attribute + str(objects_dict.get(attribute))) > 50:
+            string_set_to_max_length = "{:150}".format(objects_dict.get(attribute))
+            sliced_string = string_set_to_max_length[:50] + '\n'
+            sliced_string += string_set_to_max_length[50:100] + '\n'
+            sliced_string += string_set_to_max_length[100:]
+            sliced_string = sliced_string.strip()
+
+            title_bar = "{:^50}".format(attribute)
+
+            task_info.append(title_bar)
+            task_info.append(sliced_string)
+        else:
+            task_info.append("{:^25}:{:^25}".format(attribute, objects_dict.get(attribute)))
+
+    return task_info
+
 
 def prepare_tasks_to_be_viewed(todo_list):
     tasks_names = []

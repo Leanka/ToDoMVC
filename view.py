@@ -21,15 +21,20 @@ def display_tasks_list(tasks_attributes_lists):
 
     # ValueError: Invalid format specifier if trying to use vars inside format brackets
 
-def display_single_task_info(objects_dict):
-    for attribute in objects_dict:
-        print(attribute, "=>", objects_dict.get(attribute))
-    # add format
-    # add pprint
+
+def display_single_task_info(task_info):
+    max_line_len = 50
+    separator = '-'*max_line_len
+
+    print(separator)
+    for info in task_info:
+        print(info)
+        print(separator)
 
 
 def display_operation_communicate(noun='something', past_participle_varb='done', instructions=''):
     print("{} has been {}! {}".format(noun.title(), past_participle_varb.lower(), instructions))
+
 
 def display_main_menu():
     menu = [" 1. Display items list",

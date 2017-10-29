@@ -8,6 +8,8 @@ def take_user_input(input_message=' ', max_input_length=1):
     while True:
         users_input = input("{}: ".format(input_message))
         users_input = users_input.strip()
+        sys.stdout.write("\033[F")
+        sys.stdout.write("\033[K")
         if (len(users_input) != 0) and (len(users_input) <= max_input_length):
             return users_input
 
@@ -20,7 +22,7 @@ def take_task_index(task_list_length):
             if task_index not in range(task_list_length):
                 raise IndexError
         except (IndexError, ValueError):
-            pass  # add clearing one line above for smooth passing input
+            sys.stdout.write("\033[K")
         else:
             return task_index
 
@@ -76,6 +78,7 @@ def main():
     os.system('clear')
     tasks_to_do = TaskList()
     while True:
+        os.system('clear')
         display_main_menu()
         chosen_menu_option = take_user_input("Choose an option by it's number")
         os.system('clear')

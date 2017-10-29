@@ -19,8 +19,6 @@ def take_task_index(task_list_length=0):
         else:
             return task_index
 
-def prepare_task_to_be_viewed():
-    pass
 
 def prepare_tasks_to_be_viewed(todo_list):
     tasks_ids_and_names = {'id': [], 'name': []}

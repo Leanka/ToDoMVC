@@ -63,10 +63,11 @@ def prepare_tasks_to_be_viewed(todo_list):
     return attributes_values_sorted_in_lists
 
 
-def check_if_choice_is_workable(chosen_option):
+def check_if_choice_is_not_workable(chosen_option):
     possible_options_if_no_task_exists = ["3", "8"]
 
-    return chosen_option in possible_options_if_no_task_exists
+    return chosen_option not in possible_options_if_no_task_exists
+
 
 
 def main():
@@ -75,7 +76,7 @@ def main():
         display_main_menu()
         chosen_menu_option = take_user_input("Choose an option by it's number")
 
-        if len(tasks_to_do.todo_list) == 0 and check_if_choice_is_workable(choice):
+        if (len(tasks_to_do.todo_list) == 0) and check_if_choice_is_not_workable(chosen_menu_option):
             display_operation_communicate('Invalid choice', 'made', 'No tasks to work on. Try to add some.')
 
         elif chosen_menu_option == "1":  # Display items list

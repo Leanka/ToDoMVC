@@ -8,8 +8,10 @@ def take_user_input(input_message=' ', max_input_length=1):
     while True:
         users_input = input("{}: ".format(input_message))
         users_input = users_input.strip()
-        os.system('clear')
+        sys.stdout.write("\033[F")
+        sys.stdout.write("\033[K")
         if (len(users_input) != 0) and (len(users_input) <= max_input_length):
+            os.system('clear')
             return users_input
 
 
@@ -88,7 +90,8 @@ def main():
         if (len(tasks_to_do.todo_list) == 0) and check_if_choice_is_not_workable(chosen_menu_option):
             if chosen_menu_option in ('1', '2', '3', '4', '5', '6', '7', '8'):
                 display_operation_communicate('Invalid choice', 'made', 'No tasks to work on. Try to add some.')
-
+                input('\n Press any key to continue.')
+                
         elif chosen_menu_option == "1":  # Display items list
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             input('\n Press any key to continue.')
@@ -106,6 +109,7 @@ def main():
             tasks_to_do.add_task(task_name, task_description)
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('task', 'added')
+            input('\n Press any key to continue.')
 
         elif chosen_menu_option == "4":  # Change items name
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
@@ -114,6 +118,7 @@ def main():
             tasks_to_do.todo_list[chosen_task_index].change_name(tasks_new_name)
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('name', 'changed')
+            input('\n Press any key to continue.')
 
         elif chosen_menu_option == "5":  # Change items desctiption
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
@@ -122,6 +127,7 @@ def main():
             tasks_to_do.todo_list[chosen_task_index].change_description(tasks_new_description)
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('description', 'changed')
+            input('\n Press any key to continue.')
 
         elif chosen_menu_option == "6":  # Mark item as done
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
@@ -129,6 +135,7 @@ def main():
             tasks_to_do.todo_list[chosen_task_index].mark_as_done()
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('task', 'marked')
+            input('\n Press any key to continue.')
 
         elif chosen_menu_option == "7":  # Delete item
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
@@ -136,6 +143,7 @@ def main():
             tasks_to_do.remove_task(chosen_task_index)
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('task', 'deleted')
+            input('\n Press any key to continue.')
 
         elif chosen_menu_option == "8":  # Exit
             display_operation_communicate('program', 'closed')

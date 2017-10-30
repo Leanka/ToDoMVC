@@ -32,22 +32,22 @@ def take_task_index(task_list_length):
 def prepare_single_task_to_be_viewed(task):
     objects_dict = task.__dict__
     max_line_len = 50
+    max_halfline_len = 24
     task_info = []
 
     for attribute in objects_dict:
-        if len(attribute + str(objects_dict.get(attribute))) > 50:
-            string_set_to_max_length = "{:150}".format(objects_dict.get(attribute))
-            sliced_string = string_set_to_max_length[:50] + '\n'
-            sliced_string += string_set_to_max_length[50:100] + '\n'
-            sliced_string += string_set_to_max_length[100:]
-            sliced_string = sliced_string.strip()
+        if len(str(objects_dict.get(attribute))) > max_halfline_len:
 
-            title_bar = "{:^50}".format(attribute)
+            sliced_string = "{:^24}: ".format(attribute) + objects_dict.get(attribute)[:max_halfline_len] + '\n'
 
-            task_info.append(title_bar)
+            string_len = len(objects_dict.get(attribute))
+            for step in range(max_halfline_len, string_len, max_halfline_len):
+                sliced_string += "{:^24}: ".format('') + objects_dict.get(attribute)[step:(step+max_halfline_len)] + '\n'
+            sliced_string = sliced_string.rstrip()
+
             task_info.append(sliced_string)
         else:
-            task_info.append("{:^25}:{:^25}".format(attribute, objects_dict.get(attribute)))
+            task_info.append("{:^24}: {:24}".format(attribute, str(objects_dict.get(attribute))))
 
     return task_info
 
@@ -91,7 +91,7 @@ def main():
             if chosen_menu_option in ('1', '2', '3', '4', '5', '6', '7', '8'):
                 display_operation_communicate('Invalid choice', 'made', 'No tasks to work on. Try to add some.')
                 input('\n Press any key to continue.')
-                
+
         elif chosen_menu_option == "1":  # Display items list
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             input('\n Press any key to continue.')

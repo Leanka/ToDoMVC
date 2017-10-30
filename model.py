@@ -1,6 +1,6 @@
 
 class Task():
-    
+
     def __init__(self, name, description):
         if isinstance(name, str) and isinstance(description, str):
             self.name = name
@@ -18,7 +18,7 @@ class Task():
 
 
 class TaskList():
-    
+
     def __init__(self):
         self.todo_list = []
 
@@ -28,4 +28,3 @@ class TaskList():
     def remove_task(self, task_index):
         if isinstance(task_index, int):
             del self.todo_list[task_index]
-

@@ -1,3 +1,4 @@
+
 def display_tasks_list(tasks_attributes_lists):
     first_column_title = ''
     second_column_title = 'id'
@@ -31,8 +32,10 @@ def display_single_task_info(task_info):
         print(separator)
     print('\n')
 
+
 def display_operation_communicate(noun='something', past_participle_varb='done', instructions=''):
     print("{} has been {}! {}".format(noun.title(), past_participle_varb.lower(), instructions))
+
 
 def display_main_menu():
     menu = ["Possible oparations:",
@@ -47,4 +50,3 @@ def display_main_menu():
 
     for operation in menu:
         print(operation)
-

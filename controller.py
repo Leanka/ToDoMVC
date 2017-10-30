@@ -81,6 +81,7 @@ def main():
     tasks_to_do = TaskList()
     max_task_name_length = 20
     max_task_description_length = 150
+    menu_options = ('1', '2', '3', '4', '5', '6', '7', '8')
     while True:
         os.system('clear')
         display_main_menu()
@@ -88,7 +89,7 @@ def main():
         os.system('clear')
 
         if (len(tasks_to_do.todo_list) == 0) and check_if_choice_is_not_workable(chosen_menu_option):
-            if chosen_menu_option in ('1', '2', '3', '4', '5', '6', '7', '8'):
+            if chosen_menu_option in menu_options:
                 display_operation_communicate('Invalid choice', 'made', 'No tasks to work on. Try to add some.')
                 input('\n Press any key to continue.')
 
@@ -151,4 +152,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

@@ -15,7 +15,6 @@ def take_user_input(input_message=' ', max_input_length=1):
             return users_input
 
 
-
 def take_task_index(task_list_length):
     while True:
         try:
@@ -71,7 +70,7 @@ def prepare_tasks_to_be_viewed(todo_list):
 
 
 def check_if_choice_is_not_workable(chosen_option):
-    possible_options_if_no_task_exists = ["3", "8"]
+    possible_options_if_no_task_exists = ['3', '8']
 
     return chosen_option not in possible_options_if_no_task_exists
 

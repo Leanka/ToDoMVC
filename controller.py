@@ -11,7 +11,7 @@ def take_user_input(input_message=' ', max_input_length=1):
         os.system('clear')
         if (len(users_input) != 0) and (len(users_input) <= max_input_length):
             return users_input
-        display_main_menu()
+
 
 
 def take_task_index(task_list_length):
@@ -77,6 +77,8 @@ def check_if_choice_is_not_workable(chosen_option):
 def main():
     os.system('clear')
     tasks_to_do = TaskList()
+    max_task_name_length = 20
+    max_task_description_length = 150
     while True:
         os.system('clear')
         display_main_menu()
@@ -99,8 +101,8 @@ def main():
             input('\n Press any key to continue.')
 
         elif chosen_menu_option == "3":  # Add item
-            task_name = take_user_input('Pass new tasks name (max 20 char)', 20)
-            task_description = take_user_input('Pass new tasks description (max 150 char)', 150)
+            task_name = take_user_input('Pass new tasks name (max 20 char)', max_task_name_length)
+            task_description = take_user_input('Pass new tasks description (max 150 char)', max_task_description_length)
             tasks_to_do.add_task(task_name, task_description)
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('task', 'added')
@@ -108,7 +110,7 @@ def main():
         elif chosen_menu_option == "4":  # Change items name
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
-            tasks_new_name = take_user_input('Pass tasks new name (max 20 char)', 20)
+            tasks_new_name = take_user_input('Pass tasks new name (max 20 char)', max_task_name_length)
             tasks_to_do.todo_list[chosen_task_index].change_name(tasks_new_name)
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('name', 'changed')
@@ -116,7 +118,7 @@ def main():
         elif chosen_menu_option == "5":  # Change items desctiption
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             chosen_task_index = take_task_index(len(tasks_to_do.todo_list))
-            tasks_new_description = take_user_input('Pass tasks new description (max 150 char)', 150)
+            tasks_new_description = take_user_input('Pass tasks new description (max 150 char)', max_task_description_length)
             tasks_to_do.todo_list[chosen_task_index].change_description(tasks_new_description)
             display_tasks_list(prepare_tasks_to_be_viewed(tasks_to_do.todo_list))
             display_operation_communicate('description', 'changed')

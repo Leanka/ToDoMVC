@@ -10,9 +10,6 @@ class Task():
     def mark_as_done(self):
         self.is_done = True
 
-    def mark_as_undone(self):
-        self.is_done = False
-
     def change_name(self, new_name):
         self.name = new_name
 

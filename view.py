@@ -1,7 +1,3 @@
-import time
-import sys
-
-
 def display_tasks_list(tasks_attributes_lists):
     first_column_title = ''
     second_column_title = 'id'
@@ -37,7 +33,6 @@ def display_single_task_info(task_info):
 
 def display_operation_communicate(noun='something', past_participle_varb='done', instructions=''):
     print("{} has been {}! {}".format(noun.title(), past_participle_varb.lower(), instructions))
-    time.sleep(2)
 
 def display_main_menu():
     menu = ["Possible oparations:",
